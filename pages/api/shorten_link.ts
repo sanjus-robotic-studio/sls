@@ -7,7 +7,7 @@ export default async (req, res) => {
     const entry = await db.db('links_db').collection('links_collection').insertOne({ link: req.body.link });
 
     res.statusCode = 201;
-    return res.json({ short_link: `${process.env.VERCEL_URL}/r/${entry.insertedCount}` });
+    return res.json({ short_link:`${process.env.VERCEL_URL}/r/${entry.insertedCount}` });
   }
 
   res.statusCode = 409;
